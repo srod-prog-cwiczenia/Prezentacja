@@ -61,6 +61,10 @@
 }
 \usepackage{graphicx} % Allows including images
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+%%%%% pakiety spoza prezentacji - ,,spadly'' z macierzystego pliku
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{latexsym}
 
 \usecolortheme[rgb={0.1,0.6,0.3}]{structure} 
 %\usecolortheme[named=RubineRed]{structure} 
@@ -165,8 +169,8 @@ ciągu arytmetycznego długości $3$.
 \begin{block}{Przykład,P.Szczuka, artykuł(...)}
 $\mathit{Primes}\in \I_F$, lecz $\mathit{Primes}$ 
 są gęste w $\T_G$ i $\T_K$, zatem nie należą do
-$I_G$ jak i do $\I_K$).
 \end{block}
+$\I_G$ jak i do $\I_K$).
 }
 \end{frame}
 %---------------------------------------------
@@ -180,6 +184,30 @@ et cetera, jakie mają one własności...
 }
 \end{frame}
 %---------------------------------------------
+\begin{frame}\frametitle{Wynik ,,pozytywny''}
+\uncover<1->{
+\begin{block}{Twierdzenie}
+$\I_K \subseteq \I_G$.
+\end{block} }
+\uncover<2-> {
+Szkic dowodu...}
+\uncover<3-> {
+Przypuśćmy że $X \not\in \I_G$. 
+Wówczas istnieje $\arithseq{a}{b}\in \B_G$ 
+taki że dla każdego 
+$\arithseq{c}{d}\subseteq \arithseq{a}{b}$, 
+$\arithseq{c}{d}\in \T_G\setminus\{\emptyset\}$ mamy
+$X\cap \arithseq{c}{d} \neq \emptyset$.
+%We need to show that there exists $\arithseq{a'}{b'}\in \B_K$ such that for every $\arithseq{c'}{d'}\subseteq \arithseq{a'}{b'}$ with $\arithseq{c'}{d'}\in \B_K$ we have $X\cap \arithseq{c'}{d'} \neq \emptyset$.
+Jak zdefiniujemy $a' := \prod_{p\in\Theta(a)}{p}$ 
+(taką \`{a} la ,,bezkwadratową część'' liczby $a$)
+i $b' := b \mod a'$. 
+%Then, $\arithseq{a'}{b'} \in \B_K$ since $a' \in \SqrFr$, $(a',b') = 1$ (as $(a,b) = 1$), and $b'<a'$.
+%Take any $\arithseq{c'}{d'} \subseteq \arithseq{a'}{b'}$ with $\arithseq{c'}{d'}\in \B_K$ (then $c' \in \SqrFr$, $(c',d')=1$, $d'<c'$, and $a'\mid c'$).
+%Note that $\arithseq{a}{b}\subseteq \arithseq{a'}{b'}$, $\arithseq{c'}{d'}\subseteq \arithseq{a'}{b'}$, and observe that $\left(\frac{a}{a'}, \frac{c'}{a'}\right) = 1$ -- the only prime factors of $\frac{a}{a'}$ are those that have already appeared in the factorization of $a'$, whereas all prime factors of $\frac{c'}{a'}$ must be different from the prime factors of $a'$ since $c'$ is square-free. 
+%Hence, $A:= \arithseq{a}{b}\cap\arithseq{c'}{d'} \neq \emptyset$ (by Lemma \ref{lemCRT}). Moreover, $A$ is an arithmetic progression, it belongs to $\T_G$ (as an intersection of two open sets in the Golomb's topology), and, obviously, $A \subseteq \arithseq{a}{b}$. From the assumption we know that $X\cap A \neq \emptyset$. Since we also have that $A \subseteq \arithseq{c'}{d'}$, it is clear that $X\cap \arithseq{c'}{d'} \neq \emptyset$.
+}
+\end{frame}
 %---------------------------------------------
 %---------------------------------------------
 %---------------------------------------------
