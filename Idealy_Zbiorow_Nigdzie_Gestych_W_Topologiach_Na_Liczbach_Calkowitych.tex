@@ -110,21 +110,39 @@ Dwa znaczenia pojęcia {\bf ideał}:
 $I \subseteq P(\real)$ rodzina zbiorów zamknięta na sumy
 (jeśli przeliczane to $\sigma$-ideał) 
 i branie podzbiorów. 	
-}					
+}	
 \uncover<2->{
-	
-}
-	
-	
-\uncover<1->{
+\begin{block}{Przykłady $\sigma$-ideałów:}
+Zbiory miary zero, zbiory pierwszej kategorii, zbiory
+sigma porowate, etc.
+\end{block}
+}				
+\uncover<3->{
 Topologia $\T$ $\Rightarrow$ ideał zbiorów nigdziegęstych
 }
+
+\uncover<4->{
+$I \subseteq P(\N)$ rodzina zbiorów zamknięta
+na sumy i branie podzbiorów. 
+}
+\uncover<5->{
+\begin{block}{Przykłady klasycznych ideałów}
+Ideał $I_d = \{A\subseteq\N\colon \lim_{n\to\infty} \frac{|A \cap
+\{1,\ldots,n\}|}{n} = 0$
+
+Ideał $I_{\frac{1}{n}} = \{A\subseteq\N\colon \sum_{n\in A} \frac{1}{n} <
+\infty\}$
+\end{block}
+}
+
 \end{frame}
 %----------------------------------
 \begin{frame}
 \uncover<1->{
-{Niezbędne definicje}
-Oznaczenie: $\arithseq{a}{b} = \{an + b\colon n\in \cN_0\}$}
+\begin{block}{Niezbędne definicje}
+Oznaczenie: $\arithseq{a}{b} = \{an + b\colon n\in \cN_0\}$
+\end{block}
+}
 \uncover<2->{, oraz
 $\SqrFr$ to wszystkie liczby wolne od kwadratów, 
 czyli $\SqrFr = \{1,2,3,5,6,7,10,11,\ldots\mathrm{etc.}\}.$
@@ -219,7 +237,7 @@ $\arithseq{c}{d}\in \T_G\setminus\{\emptyset\}$ mamy
 $X\cap \arithseq{c}{d} \neq \emptyset$.}
 %We need to show that there exists $\arithseq{a'}{b'}\in \B_K$ such that for every $\arithseq{c'}{d'}\subseteq \arithseq{a'}{b'}$ with $\arithseq{c'}{d'}\in \B_K$ we have $X\cap \arithseq{c'}{d'} \neq \emptyset$.
 \uncover<5->{
-Jak zdefiniujemy $a' := \prod_{p\in\Theta(a)}{p}$ 
+Gdy zdefiniujemy $a' := \prod_{p\in\Theta(a)}{p}$ 
 (taką \`{a} la ,,bezkwadratową część'' liczby $a$)
 i $b' := b \mod a'$. 
 Wówczas, $\arithseq{a'}{b'} \in \B_K$.}
