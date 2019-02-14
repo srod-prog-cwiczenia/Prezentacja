@@ -104,7 +104,7 @@ na liczbach naturalnych
 %----------------------------------
 %\section{Wstęp}
 %----------------------------------
-\begin{frame}											 
+\begin{frame}\frametitle{Dwa oblicza pojęcia ideału}
 \uncover<1->{
 Dwa znaczenia pojęcia {\bf ideał}:
 }
@@ -118,11 +118,11 @@ albo jeszcze ogólnej: jakaś ustalona przestrzeń polska)
 \uncover<3->{
 \begin{block}{Przykłady $\sigma$-ideałów:}
 Zbiory miary zero, zbiory pierwszej kategorii, zbiory
-sigma porowate, etc.
+sigma porowate, \textrm{etc.}
 \end{block}
 }				
 \uncover<4->{
-Topologia $\T$ $\Rightarrow$ ideał zbiorów nigdziegęstych
+Topologia $\T$ $\Rightarrow$ $\I$ ideał zbiorów nigdziegęstych
 }
 \hrule
 \uncover<5->{
@@ -131,26 +131,32 @@ na sumy i branie podzbiorów.
 }
 \uncover<6->{
 \begin{block}{Przykłady klasycznych ideałów}
-Ideał $I_d = \{A\subseteq\N\colon \lim_{n\to\infty} \frac{|A \cap
+Ideał $\I_d = \{A\subseteq\N\colon \lim_{n\to\infty} \frac{|A \cap
 \{1,\ldots,n\}|}{n} = 0$
 
-Ideał $I_{\frac{1}{n}} = \{A\subseteq\N\colon \sum_{n\in A} \frac{1}{n} <
+Ideał $\I_{\frac{1}{n}} = \{A\subseteq\N\colon \sum_{n\in A} \frac{1}{n} <
 \infty\}$
 \end{block}
 }
+\uncover<7->{
+Mamy: $\I_{\frac{1}{n}} \subseteq \I_d$.
+}
 
+\uncover<8->{
+??? (jaka topologia?) $\Rightarrow$ $\cI$ ideał zbiorów nigdziegęstych w tej top.
+}
 \end{frame}
 %----------------------------------
-\begin{frame}
+\begin{frame}\frametitle{Garść oznaczeń i definicji}
 \uncover<1->{
 \begin{block}{Niezbędne definicje}
 Oznaczenie: $\arithseq{a}{b} = \{an + b\colon n\in \cN_0\}$
-\end{block}
 }
-\uncover<2->{, oraz
+
+\uncover<2->{
 $\SqrFr$ to wszystkie liczby wolne od kwadratów, 
 czyli $\SqrFr = \{1,2,3,5,6,7,10,11,\ldots\mathrm{etc.}\}.$
-}
+\end{block}}
 \uncover<3->{
 Rozważamy następujące topologie na $\cN$:
 
@@ -165,7 +171,7 @@ z bazą $\B_K = \{\arithseq{a}{b} :\ (a,b)=1,\ b<a,\ a\in\SqrFr\}$.
 }
 \end{frame}
 %---------------------------------------------
-\begin{frame}
+\begin{frame}\frametitle{Główne postacie akcji}
 \uncover<1->{
 Dla każdej topologii na $\cN$
 można rozważać ideał jej zbiorów nigdziegęstych, zatem mamy:
@@ -173,15 +179,15 @@ można rozważać ideał jej zbiorów nigdziegęstych, zatem mamy:
 \uncover<2->{
 \begin{block}{Definicja}
 \begin{itemize}
-\item \emph{Ideał Furstenberga} $\I_F$ zbiorów nigdzie gęstych w $\T_F$,
-\item \emph{Ideał Golomba} $\I_G$ zbiorów nigdzie gęstych w $\T_G$,
-\item \emph{Ideał Kircha} $\I_K$ zbiorów nigdzie gęstych w $\T_K$.
+\item<2-> \emph{Ideał Furstenberga} $\I_F$ zbiorów nigdzie gęstych w $\T_F$,
+\item<3-> \emph{Ideał Golomba} $\I_G$ zbiorów nigdzie gęstych w $\T_G$,
+\item<4-> \emph{Ideał Kircha} $\I_K$ zbiorów nigdzie gęstych w $\T_K$.
 \end{itemize}
 \end{block}
 }
 \end{frame}
 %---------------------------------------------
-\begin{frame}
+\begin{frame}\frametitle{Prosty przykład}
 Prosty przykład:
 \uncover<2->{
 \begin{block}{Przykład}
@@ -190,23 +196,22 @@ Zbiór $A = \{n! :\ n\in\N\}$ należy do wszystkich ideałów: $\I_F$, $\I_G$, $
 }
 \uncover<3->{
 \begin{block}{Zwięzłe uzasadnienie}
-Zauważmy że $A$ jest zbiorem domkniętym w topologii Kircha,
+\begin{itemize}
+\item<3->Zauważmy że $A$ jest zbiorem domkniętym w topologii Kircha,
 więc jest domknięty w każdej z pozostałych dwóch:
 Gdy $x$ jest punktem skupienia $A$ w topologii Kircha 
 to dla liczby pierwszej $p > x$ otoczenie
 $\arithseq{p}{x}$ ,,haczy'' $A$ tylko w skończenie wielu punktach.
-\uncover<4->{
-  Dalej: $A$ jest brzegowy w każdej
+\item<4->Dalej: $A$ jest brzegowy w każdej
 z naszych $3$ topologiach, bo nie zawiera
 ciągu arytmetycznego długości $3$.
-}
-\end{block}
-}
+\end{itemize}
+\end{block}}
 \end{frame}
 %---------------------------------------------
-\begin{frame}
+\begin{frame}[label=powrot]
 \uncover<1->{
-\begin{block}{Przykład,P.Szczuka, artykuł(...)}
+\begin{block}{Przykład,P.Szczuka, \hyperlink{bibliografia}{\beamergotobutton{publikacja}} }
 $\mathit{Primes}\in \I_F$, lecz $\mathit{Primes}$ 
 są gęste w $\T_G$ i $\T_K$, zatem nie należą do
 \end{block}
@@ -257,13 +262,13 @@ to będzie nasze szukane otoczenie.
 }
 \end{frame}
 %---------------------------------------------
-\begin{frame}
+\begin{frame}[label=GFnotK]
 \uncover<1->{
 \begin{block}{Twierdzenie}
 $(\I_G\cap \I_F) \backslash \I_K \not= \emptyset$.
 \end{block}}
 \uncover<2->{
-
+\begin{alertblock}{Konstrukcja jest nieco zawiła}\end{alertblock}
 Niech $\mathcal{C} := \{\arithseq{a}{b}\in \B_K :\ \arithseq{a}{b}\subseteq \arithseq{2}{1}\}$. i  $\{C_k :\ k\in\N\}$ numeracja elementów $\mathcal{C}$.
 
 Jak konstruujemy $X \in (\I_G\cap \I_F) \setminus \I_K$?
@@ -309,10 +314,11 @@ If $k > m$, then $x_k \in \arithseq{2^{m+1}}{1}$ so
 $V\cap X = \emptyset$. Also $V\in\T_F$ and, if $\arithseq{a}{b} \in \B_G$, then
 $V \in \T_G$.
 }
+\hyperlink{diagramik}{\beamerreturnbutton{Do diagramu}}
 \end{frame}
 %---------------------------------------------
 %---------------------------------------------
-\begin{frame}
+\begin{frame}[label=diagramik]
 \uncover<1->{
 Wszystkie omówione uprzednio relacje
 pomiędzy naszymi ideałami daje się ująć
@@ -330,7 +336,7 @@ w postaci następującego diagramu:}
 \put(25,56){\makebox(0,0){?}}
 \put(62,56){\makebox(0,0){$\arithseq{2}{2}$}}
 \put(110,56){\makebox(0,0){$\{n!\}$}}
-\put(152,56){\makebox(0,0){\ref{GFnotK}}}
+\put(152,56){\makebox(0,0){\hyperlink{GFnotK}{\beamerreturnbutton{Ex}}}}
 \put(176,56){\makebox(0,0){$\SqrFr$}}
 \end{picture}
 \end{center}
@@ -338,17 +344,36 @@ w postaci następującego diagramu:}
 \end{frame}
 %---------------------------------------------
 %---------------------------------------------
-\begin{frame}
-\uncover<1->{
-Garść otwartych problemów:}
+\begin{frame}\frametitle{Szczypta otwartych problemów}
+\uncover<1->{Otwarte problemy:}
 
 \begin{block}{Problem}
-Czy prawdą jest że $\I_G\setminus (\I_K\cup \I_F) \not= \emptyset$?
+\begin{enumerate}
+\item<1>Czy prawdą jest że $\I_G\setminus (\I_K\cup \I_F) \not= \emptyset$?
+\end{enumerate}
 \end{block}
 \end{frame}
 %---------------------------------------------
 %---------------------------------------------
-\begin{frame}{allowframebreaks}
+\begin{frame}\frametitle{Dalsze ścieżki}
+\uncover<1->{
+Jakie własności mają nasze ideały i jak są umocowane 
+wśród mrowia klasycznych ideałów?
+}
+\uncover<2->{
+\begin{block}{Własności ideałów}
+Ideał może być: P ideałem, analitycznym, tall, mieć własność BW,
+\textrm{etc.} 
+\end{block}
+}
+\uncover<3->{
+\begin{block}{Ocean klasycznych ideałów}
+\end{block}
+}
+\end{frame}
+%---------------------------------------------
+%---------------------------------------------
+\begin{frame}[label=bibliografia]{allowframebreaks}
 \frametitle{Ten referat jest oparty m.in. na publikacjach:}
 \beamertemplatebookbibitems
 \begin{thebibliography}{10}{
@@ -358,6 +383,9 @@ Czy prawdą jest że $\I_G\setminus (\I_K\cup \I_F) \not= \emptyset$?
 \bibitem{PS}
 {\sc Szczuka P.}, {The connectedness of arithmetic progressions in Furstenberg's, Golomb's and Kirch's topologies},
 Demonstratio Math. {\bf 43}(4) (2010) 899--909.
+
+\hyperlink{powrot}{\beamerreturnbutton{Powrót}}
+
 \end{thebibliography}
 \end{frame}
 
