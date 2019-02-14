@@ -80,9 +80,9 @@
 %\setbeamercolor{bibliography item}{fg=black}
 %\setbeamercolor*{bibliography entry title}{fg=black}
 %-----------------------------------
-\title[O ideałach zbiorów ND...]{
-O ideałach zbiorów nigdziegęstych w topologiach
-na zbiorze liczb naturalnych.
+\title[Ideały zbiorów ND...]{
+Ideały zbiorów nigdziegęstych w wybranych topologiach 
+na liczbach naturalnych
 } 
 %\subtitle{}
 \author{Marta Kwela \& AN} 
@@ -105,27 +105,31 @@ na zbiorze liczb naturalnych.
 %\section{Wstęp}
 %----------------------------------
 \begin{frame}											 
-Dwa znaczenia pojęcia {\bf ideał}:
 \uncover<1->{
+Dwa znaczenia pojęcia {\bf ideał}:
+}
+
+\uncover<2->{
 $I \subseteq P(\real)$ rodzina zbiorów zamknięta na sumy
 (jeśli przeliczane to $\sigma$-ideał) 
-i branie podzbiorów. 	
+i branie podzbiorów. (zamiast $\real$ może być $2^\omega$ 
+albo jeszcze ogólnej: jakaś ustalona przestrzeń polska)
 }	
-\uncover<2->{
+\uncover<3->{
 \begin{block}{Przykłady $\sigma$-ideałów:}
 Zbiory miary zero, zbiory pierwszej kategorii, zbiory
 sigma porowate, etc.
 \end{block}
 }				
-\uncover<3->{
+\uncover<4->{
 Topologia $\T$ $\Rightarrow$ ideał zbiorów nigdziegęstych
 }
-
-\uncover<4->{
+\hrule
+\uncover<5->{
 $I \subseteq P(\N)$ rodzina zbiorów zamknięta
 na sumy i branie podzbiorów. 
 }
-\uncover<5->{
+\uncover<6->{
 \begin{block}{Przykłady klasycznych ideałów}
 Ideał $I_d = \{A\subseteq\N\colon \lim_{n\to\infty} \frac{|A \cap
 \{1,\ldots,n\}|}{n} = 0$
@@ -253,6 +257,59 @@ to będzie nasze szukane otoczenie.
 }
 \end{frame}
 %---------------------------------------------
+\begin{frame}
+\uncover<1->{
+\begin{block}{Twierdzenie}
+$(\I_G\cap \I_F) \backslash \I_K \not= \emptyset$.
+\end{block}}
+\uncover<2->{
+
+Niech $\mathcal{C} := \{\arithseq{a}{b}\in \B_K :\ \arithseq{a}{b}\subseteq \arithseq{2}{1}\}$. i  $\{C_k :\ k\in\N\}$ numeracja elementów $\mathcal{C}$.
+
+Jak konstruujemy $X \in (\I_G\cap \I_F) \setminus \I_K$?
+Dla każdego $k\in\N$ wybieramy $x_k$ tak aby:
+\begin{itemize}
+	\item $x_k\in C_k$,
+	\item $x_k\in \arithseq{2^k}{1}$.
+\end{itemize}
+
+Observe that such construction is possible since $C_k \cap \arithseq{2^k}{1}$ is always nonempty (if $C_k = \arithseq{a_k}{b_k}$, then $a_k$ is even and square-free, and $\left(\frac{a_k}{2},\frac{2^k}{2}\right)=\left(\frac{a_k}{2},2^{k-1}\right)=1$ as $\frac{a_k}{2}$ is odd; both $\arithseq{a_k}{b_k}$ and $\arithseq{2^k}{1}$ are subsequences of $\arithseq{2}{1}$, so, by Lemma \ref{lemCRT}, their intersection is nonempty). 
+
+Niech $X := \{x_k :\ k\in\N\}$.
+
+Można sprawdzić że $X \notin \I_K$. 
+
+%Indeed, the set $\arithseq{2}{1}\in\B_K$ has a property that for every $\arithseq{c}{d}\subseteq \arithseq{2}{1}$ with $\arithseq{c}{d}\in \B_K$ (so $\arithseq{c}{d}=C_{k_0}$ for some $k_0\in\N$) we have $X\cap \arithseq{c}{d} \neq \emptyset$ (as it contains $x_{k_0}$).
+  Wybierzmy teraz dowolny $\arithseq{a}{b} \in \B_F$. 
+Wystarczy pokazać że istnieje niepusty
+$V \subseteq \arithseq{a}{b}$, $X\cap V = \emptyset$ taki że
+$V\in \T_F$ i gdy $\arithseq{a}{b}\in \B_G$ to $V\in\T_G$.
+
+  Assume first that $2\not | a$. Let 
+$V = (\arithseq{a}{b} \cap \arithseq{4}{3}) \setminus \{x_1\}$. 
+Then $V \not= \emptyset$ because $(a,4) = 1$ so 
+$V\in \T_F$ and, if $\arithseq{a}{b}\in \B_G$, then $V\in \T_G$.
+If $k > 1$, then $x_k \in \arithseq{4}{1}$ so $V\cap X = \emptyset$.
+  
+  Now assume that $2|a$ and pick the largest $m\in \N$
+such that $2^m|a$. If $b$ is even then $\arithseq{a}{b}\cap X = \emptyset$
+and we may let $V = \arithseq{a}{b}$. Thus we may assume
+that $b$ is odd. If $b\not\equiv 1(\modulo 2^m)$, let
+$V = \arithseq{a}{b}\setminus \{x_1,\ldots, x_{m-1}\}$.
+Then $\arithseq{a}{b}\cap \arithseq{2^m}{1} = \emptyset$ so $V\cap X = \emptyset$.
+
+  Thus we may assume that $b\equiv 1(\modulo 2^m)$. Let 
+\[
+V = (\arithseq{a}{b} \cap \arithseq{2^{m+1}}{1 + 2^m}) \setminus \{x_1,\ldots, x_{m}\}.
+\]
+Then $V \not= \emptyset$ because $(\frac{a}{2^m} , \frac{2^{m+1}}{2^m}) = 1$
+and $\arithseq{a}{b}$ and $\arithseq{2^{m+1}}{1 + 2^m}$
+are contained in $\arithseq{2^m}{1}$. 
+If $k > m$, then $x_k \in \arithseq{2^{m+1}}{1}$ so 
+$V\cap X = \emptyset$. Also $V\in\T_F$ and, if $\arithseq{a}{b} \in \B_G$, then
+$V \in \T_G$.
+}
+\end{frame}
 %---------------------------------------------
 %---------------------------------------------
 \begin{frame}
