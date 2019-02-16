@@ -211,7 +211,7 @@ ciągu arytmetycznego długości $3$.
 \end{block}}
 \end{frame}
 %---------------------------------------------
-\begin{frame}[label=powrot]
+\begin{frame}[label=powrotPS]
 \uncover<1->{
 \begin{block}{Przykład,P.Szczuka, \hyperlink{bibliografia}{\beamergotobutton{publikacja}} }
 $\mathit{Primes}\in \I_F$, lecz $\mathit{Primes}$ 
@@ -359,7 +359,7 @@ w postaci następującego diagramu:}
 \end{frame}
 %---------------------------------------------
 %---------------------------------------------
-\begin{frame}\frametitle{Dalsze ścieżki}
+\begin{frame}[label=powrotIF]\frametitle{Dalsze ścieżki}
 \uncover<1->{
 Jakie własności mają nasze ideały i jak są umocowane 
 wśród kolekcji klasycznych ideałów?
@@ -371,10 +371,19 @@ FinBW, być typu $F_{\sigma}$, \textrm{etc.}
 \end{block}
 }
 \uncover<3->{
-\begin{block}{Miriady klasycznych ideałów}
+\begin{block}{Miriady klasycznych ideałów, np.}
+\begin{itemize}
+\item<4->
 $\cW$ - ideał van der Waerdena = 
 $\{A\subseteq \N\colon\textrm{A nie zawiera ciągów arytmetycznych dowolnej
 długości}\}$
+\item<5->
+$\NWD(\Q):=\left\{A\subseteq\mathbb{Q}:\ \cl_\R(A) \textrm{ jest nigdziegęsty }\right\},$
+\item<6->
+$\NULL(\Q):=\left\{A\subseteq\mathbb{Q}:\ \cl_\R(A) \textrm{ jest miary Lebesgue'a zero}\right\}$.
+W \hyperlink{bibliografia}{\beamergotobutton{pracy}} I. Farah and S. Solecki udowodnili że
+$\NWD(\Q)$ i $\NULL(\Q)$ nie są izomorficzne.
+\end{itemize}
 \end{block}
 }
 \end{frame}
@@ -501,6 +510,23 @@ $\I_F$, $\I_G$ oraz $\I_K$ są ideałami typu $F_{\sigma\delta}$ lecz już nie $
 \end{block}}
 \end{frame}
 %---------------------------------------------
+\begin{frame}\frametitle{Topologiczna własność ideału Furstenberga}
+\uncover<2->{
+\begin{block}{Twierdzenie}
+Ideały $\I_F$ oraz $\NWD(\Q)$ są izomorficzne.
+\end{block}
+}
+\uncover<3->{
+\begin{block}{Szkic dowodu}
+Wystarczy zauważyć że $\N$ z topologią Furstenberga jest
+homeomorficzna z przestrzenią $\Q$ (z naturalną topologią), 
+wynika to z klasycznego twierdzenia Sierpińskiego z roku 1920 
+charakteryzującego liczby wymierna jako jedyną przeliczalną
+przestrzeń metryzowalną bez punktów izolowanych.
+\end{block}
+}
+\end{frame}
+
 %---------------------------------------------
 %---------------------------------------------
 %---------------------------------------------
@@ -515,6 +541,12 @@ $\I_F$, $\I_G$ oraz $\I_K$ są ideałami typu $F_{\sigma\delta}$ lecz już nie $
 \frametitle{Ten referat jest oparty m.in. na publikacjach:}
 \beamertemplatebookbibitems
 \begin{thebibliography}{10}{
+\bibitem{FS}
+{\sc Farah I., Solecki S.}, {Two $F_{\sigma\delta}$ ideals},
+Proc. Amer. Math. Soc. {\bf 131}(6) (2003) 1971--1975.
+
+\hyperlink{powrotIF}{\beamerreturnbutton{Powrót}}
+
 \bibitem{MZ}
  {\sc Kwela, Marta, AN;} {Ideals of nowhere dense sets in some topologies on positive integers.} Topology Appl. 248 (2018), 149–163.
 }
@@ -522,7 +554,7 @@ $\I_F$, $\I_G$ oraz $\I_K$ są ideałami typu $F_{\sigma\delta}$ lecz już nie $
 {\sc Szczuka P.}, {The connectedness of arithmetic progressions in Furstenberg's, Golomb's and Kirch's topologies},
 Demonstratio Math. {\bf 43}(4) (2010) 899--909.
 
-\hyperlink{powrot}{\beamerreturnbutton{Powrót}}
+\hyperlink{powrotPS}{\beamerreturnbutton{Powrót}}
 
 \end{thebibliography}
 \end{frame}
