@@ -364,7 +364,7 @@ wśród kolekcji klasycznych ideałów?
 \uncover<2->{
 \begin{block}{Własności ideałów}
 Ideał może być: P ideałem, analitycznym, tall, mieć własność BW,
-\textrm{etc.} 
+FinBW,\textrm{etc.} 
 \end{block}
 }
 \uncover<3->{
@@ -375,6 +375,65 @@ długości}\}$
 \end{block}
 }
 \end{frame}
+%---------------------------------------------
+\begin{frame}\frametitle{Cechy ideałów zbiorów ND}
+\uncover<1->{
+\begin{block}{Ważka obserwacja:}
+Wszystkie rozważane wcześniej topologie na $\N$ 
+(Furstenberga, Golomba, Kircha, etc.) mają
+bazę przeliczalną (innymi słowy: ,,spełniają drugi aksjomat przeliczalności'').
+\end{block}
+}
+\uncover<2->{
+\begin{block}{Notka na marginesie:}
+Nie każda topologia na zbiorze przeliczalnym musi spełniać
+nawet pierwszy aksjomat przeliczalności.
+kontrprzykład: Tak zwana {\color{red}przestrzeń Arensa–Forta}.
+\end{block}
+}
+\end{frame}
+%---------------------------------------------
+\begin{frame}\frametitle{Chwilowo rozważamy ideały w pierwszym sensie}
+\uncover<1->{
+\begin{block}{Idea Marczewskiego i Burstina}
+Dla dowolnej rodziny $\cF \subseteq P(X)\setminus\{\emptyset\}$
+definiujemy:
+\begin{enumerate}
+\item<2-> 
+$S(\cF) = \{A\subseteq X\colon \forall_{T\in\cF}\exists_{W\in\cF} 
+W \subseteq T \cap A \vee W \subseteq T \cap A^c\}$
+\item<3-> 
+$S_0(\cF) = \{A\subseteq X\colon \forall_{T\in\cF}\exists_{W\in\cF} W \subseteq T \cap A^c\}$
+\end{enumerate}
+\end{block}
+}
+\uncover<4->{
+\begin{block}{Prosta obserwacja}
+\end{block}
+Rodzina $S(\cF)$ jest ciałem zbiorów, zaś $S_0(\cF)$ jest ideałem.
+}
+\end{frame}
+%---------------------------------------------
+\begin{frame}\frametitle{Wracamy do ideałów na $\cN$}
+\uncover<1->{
+\begin{block}{Definicja}
+Ideał $\cI\subseteq P(\cN)$ nazywamy ideałem 
+\emph{MB-przeliczalnie reprezentowalnym}(skrót: $\MBC$) gdy 
+istnieje \emph{przeliczalna} rodzina $\cF \subseteq P(\N)$
+zbiorów nieskończonych taka, że 
+$\cI = S^0(\cF) = 
+\left\{A\subseteq \N :\ \forall_{F\in\mathcal{F}}\ \exists_{G\in\mathcal{F},\ G\subseteq F}\ A\cap G=\emptyset\right\}$
+\end{block}
+}
+
+\begin{block}{Uwaga}
+Ideały $\I_F$, $\I_G$ i $\I_K$ są $\MBC$.
+\end{block}
+
+\end{frame}
+%---------------------------------------------
+%---------------------------------------------
+%---------------------------------------------
 %---------------------------------------------
 %---------------------------------------------
 \begin{frame}[label=bibliografia]{allowframebreaks}
@@ -402,4 +461,16 @@ Demonstratio Math. {\bf 43}(4) (2010) 899--909.
 \end{frame}
 
 \end{document}
+
+%%%%%%%% szablonik na kolejny slajd:
+\begin{frame}\frametitle{XXX}
+\uncover<1->{
+XXX
+}
+\uncover<2->{
+\begin{block}{XXX}
+XXX
+\end{block}
+}
+\end{frame}
 
