@@ -92,7 +92,8 @@ na liczbach naturalnych
   Institut Matematyki \\
   Wita Stwosza 57 \\
   80 -- 952 Gdańsk \\[1ex]
-  \textit{e-mail: marta.kwela@mat.ug.edu.pl} 
+  \textit{e-mail: marta.kwela@mat.ug.edu.pl}\\
+  \textit{e-mail: andrzej@mat.ug.edu.pl} 
 }
 \date{Bydgoszcz \today}
 %---------------------
@@ -222,11 +223,11 @@ $\I_G$ jak i do $\I_K$).
 %---------------------------------------------
 \begin{frame}
 \uncover<1->{
-Nasz cel: Jakie są relacje pomiędzy zdefiniowanymi ideałami,
+\begin{block}{Nasz cel:}
+Jakie są relacje pomiędzy zdefiniowanymi ideałami,
 jak są one ,,umocowane'' w obrębie ideałów $\cI_d$, $\cI_{\frac{1}{n}}$,
 et cetera, jakie mają one własności...
-}
-\uncover<2->{
+\end{block}
 }
 \end{frame}
 %---------------------------------------------
@@ -279,7 +280,10 @@ Dla każdego $k\in\N$ wybieramy $x_k$ tak aby:
 	\item $x_k\in \arithseq{2^k}{1}$.
 \end{itemize}
 
-Observe that such construction is possible since $C_k \cap \arithseq{2^k}{1}$ is always nonempty (if $C_k = \arithseq{a_k}{b_k}$, then $a_k$ is even and square-free, and $\left(\frac{a_k}{2},\frac{2^k}{2}\right)=\left(\frac{a_k}{2},2^{k-1}\right)=1$ as $\frac{a_k}{2}$ is odd; both $\arithseq{a_k}{b_k}$ and $\arithseq{2^k}{1}$ are subsequences of $\arithseq{2}{1}$, so, by Lemma \ref{lemCRT}, their intersection is nonempty). 
+Ta konstrukcja jest możliwa gdyż $C_k \cap \arithseq{2^k}{1}$ 
+jest zawsze niepusty 
+
+(if $C_k = \arithseq{a_k}{b_k}$, then $a_k$ is even and square-free, and $\left(\frac{a_k}{2},\frac{2^k}{2}\right)=\left(\frac{a_k}{2},2^{k-1}\right)=1$ as $\frac{a_k}{2}$ is odd; both $\arithseq{a_k}{b_k}$ and $\arithseq{2^k}{1}$ are subsequences of $\arithseq{2}{1}$, so, by Lemma \ref{lemCRT}, their intersection is nonempty). 
 
 Niech $X := \{x_k :\ k\in\N\}$.
 
@@ -291,16 +295,16 @@ Wystarczy pokazać że istnieje niepusty
 $V \subseteq \arithseq{a}{b}$, $X\cap V = \emptyset$ taki że
 $V\in \T_F$ i gdy $\arithseq{a}{b}\in \B_G$ to $V\in\T_G$.
 
-  Assume first that $2\not | a$. Let 
+  Na początek załóżmy że $2\not | a$. Niech 
 $V = (\arithseq{a}{b} \cap \arithseq{4}{3}) \setminus \{x_1\}$. 
 Then $V \not= \emptyset$ because $(a,4) = 1$ so 
 $V\in \T_F$ and, if $\arithseq{a}{b}\in \B_G$, then $V\in \T_G$.
 If $k > 1$, then $x_k \in \arithseq{4}{1}$ so $V\cap X = \emptyset$.
   
-  Now assume that $2|a$ and pick the largest $m\in \N$
-such that $2^m|a$. If $b$ is even then $\arithseq{a}{b}\cap X = \emptyset$
-and we may let $V = \arithseq{a}{b}$. Thus we may assume
-that $b$ is odd. If $b\not\equiv 1(\modulo 2^m)$, let
+  Załóżmy teraz że $2|a$ i wybierzmy największe $m\in \N$
+takie, że $2^m|a$. Gdy $b$ jest parzyste, to $\arithseq{a}{b}\cap X = \emptyset$
+i kładziemy $V = \arithseq{a}{b}$. Załóżmy zatem że 
+$b$ jest nieparzyste. If $b\not\equiv 1(\modulo 2^m)$, let
 $V = \arithseq{a}{b}\setminus \{x_1,\ldots, x_{m-1}\}$.
 Then $\arithseq{a}{b}\cap \arithseq{2^m}{1} = \emptyset$ so $V\cap X = \emptyset$.
 
@@ -431,6 +435,26 @@ Ideały $\I_F$, $\I_G$ i $\I_K$ są $\MBC$.
 \end{block}
 
 \end{frame}
+%---------------------------------------------
+\begin{frame}\frametitle{Nasze ideały są {\color{red}tall}}
+\uncover<1->{
+\begin{block}{Twierdzenie}
+Niech $\mathcal{F}\subseteq P(\N)$ będzie przeliczaną rodziną złożoną
+ze zbiorów nieskończonych. Załóżmy ponadto że:
+\begin{itemize}
+\item<2-> $\mathcal{F}$ has the base-like property,
+\item<3-> $\mathcal{F}$ has the splitting property.
+\end{itemize}
+\uncover<4->{Wówczas ideał $\I=S^0(\mathcal{F})$ jest {\color{red}tall}.}
+\end{block}
+}
+\uncover<5->{
+\begin{block}{Wniosek}
+Ideały $\I_F$, $\I_G$ oraz $\I_K$ są wszystkie {\color{red}tall}.
+\end{block}
+}
+\end{frame}
+%---------------------------------------------
 %---------------------------------------------
 %---------------------------------------------
 %---------------------------------------------
