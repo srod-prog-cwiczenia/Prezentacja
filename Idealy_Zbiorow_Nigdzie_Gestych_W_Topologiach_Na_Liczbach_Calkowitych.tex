@@ -112,7 +112,7 @@ Dwa znaczenia pojęcia {\bf ideał}:
 }
 
 \uncover<2->{
-$I \subseteq P(\real)$ rodzina zbiorów zamknięta na sumy
+$\I \subseteq P(\real)$ rodzina zbiorów zamknięta na sumy
 (jeśli przeliczane to $\sigma$-ideał) 
 i branie podzbiorów. (zamiast $\real$ może być $2^\omega$ 
 albo jeszcze ogólnej: jakaś ustalona przestrzeń polska)
@@ -128,7 +128,7 @@ Topologia $\T$ $\Rightarrow$ $\I$ ideał zbiorów nigdziegęstych
 }
 \hrule
 \uncover<5->{
-$I \subseteq P(\N)$ rodzina zbiorów zamknięta
+$\I \subseteq P(\N)$ rodzina zbiorów zamknięta
 na sumy i branie podzbiorów. 
 }
 \uncover<6->{
@@ -175,15 +175,15 @@ z bazą $\B_K = \{\arithseq{a}{b} :\ (a,b)=1,\ b<a,\ a\in\SqrFr\}$.
 %---------------------------------------------
 \begin{frame}\frametitle{Główne postacie akcji}
 \uncover<1->{
-Dla każdej topologii na $\cN$
+Dla każdej topologii na $\N$
 można rozważać ideał jej zbiorów nigdziegęstych, zatem mamy:
 }
 \uncover<2->{
 \begin{block}{Definicja}
 \begin{itemize}
-\item<2-> \emph{Ideał Furstenberga} $\I_F$ zbiorów nigdzie gęstych w $\T_F$,
-\item<3-> \emph{Ideał Golomba} $\I_G$ zbiorów nigdzie gęstych w $\T_G$,
-\item<4-> \emph{Ideał Kircha} $\I_K$ zbiorów nigdzie gęstych w $\T_K$.
+\item<2-> \emph{Ideał Furstenberga} $\I_F$ zbiorów nigdziegęstych w $\T_F$,
+\item<3-> \emph{Ideał Golomba} $\I_G$ zbiorów nigdziegęstych w $\T_G$,
+\item<4-> \emph{Ideał Kircha} $\I_K$ zbiorów nigdziegęstych w $\T_K$.
 \end{itemize}
 \end{block}
 }
@@ -215,9 +215,8 @@ ciągu arytmetycznego długości $3$.
 \uncover<1->{
 \begin{block}{Przykład,P.Szczuka, \hyperlink{bibliografia}{\beamergotobutton{publikacja}} }
 $\mathit{Primes}\in \I_F$, lecz $\mathit{Primes}$ 
-są gęste w $\T_G$ i $\T_K$, zatem nie należą do
+są gęste w $\T_G$ i $\T_K$, zatem nie należą do $\I_G$ jak i do $\I_K$).
 \end{block}
-$\I_G$ jak i do $\I_K$).
 }
 \end{frame}
 %---------------------------------------------
@@ -368,7 +367,7 @@ wśród kolekcji klasycznych ideałów?
 \uncover<2->{
 \begin{block}{Własności ideałów}
 Ideał może być: P ideałem, analitycznym, tall, mieć własność BW,
-FinBW,\textrm{etc.} 
+FinBW, być typu $F_{\sigma}$, \textrm{etc.} 
 \end{block}
 }
 \uncover<3->{
@@ -413,15 +412,15 @@ $S_0(\cF) = \{A\subseteq X\colon \forall_{T\in\cF}\exists_{W\in\cF} W \subseteq 
 }
 \uncover<4->{
 \begin{block}{Prosta obserwacja}
-\end{block}
 Rodzina $S(\cF)$ jest ciałem zbiorów, zaś $S_0(\cF)$ jest ideałem.
+\end{block}
 }
 \end{frame}
 %---------------------------------------------
 \begin{frame}\frametitle{Wracamy do ideałów na $\cN$}
 \uncover<1->{
 \begin{block}{Definicja}
-Ideał $\cI\subseteq P(\cN)$ nazywamy ideałem 
+Ideał $\cI\subseteq P(\N)$ nazywamy ideałem 
 \emph{MB-przeliczalnie reprezentowalnym}(skrót: $\MBC$) gdy 
 istnieje \emph{przeliczalna} rodzina $\cF \subseteq P(\N)$
 zbiorów nieskończonych taka, że 
@@ -438,14 +437,26 @@ Ideały $\I_F$, $\I_G$ i $\I_K$ są $\MBC$.
 %---------------------------------------------
 \begin{frame}\frametitle{Nasze ideały są {\color{red}tall}}
 \uncover<1->{
+\begin{block}{Definicja}
+Mówimy że ideał $\mathcal{I}\subseteq\mathcal{P}(\N)$ jest 
+{\color{red}tall} gdy każdy nieskończony podzbiór $\N$ zawiera nieskończony podzbiór
+z ideału $\mathcal{I}$.
+\end{block}}
+\uncover<2->{
 \begin{block}{Twierdzenie}
 Niech $\mathcal{F}\subseteq P(\N)$ będzie przeliczaną rodziną złożoną
 ze zbiorów nieskończonych. Załóżmy ponadto że:
 \begin{itemize}
-\item<2-> $\mathcal{F}$ has the base-like property,
-\item<3-> $\mathcal{F}$ has the splitting property.
+\item<3-> $\mathcal{F}$ ma własność \emph{base-like},
+czyli 
+$\forall_{F_1, F_2\in\mathcal{F},\ F_1\cap F_2\neq\emptyset}\ \exists_{H\in\mathcal{F}}
+\ H\subseteq F_1\cap F_2$
+\item<4-> $\mathcal{F}$ ma własność \emph{splittingu}, 
+czyli
+$\forall_{F\in\mathcal{F}}\ \exists_{F_1,F_2\in\mathcal{F},\ F_1\cup F_2
+ \subseteq F}\ F_1\cap F_2 = \emptyset$
 \end{itemize}
-\uncover<4->{Wówczas ideał $\I=S^0(\mathcal{F})$ jest {\color{red}tall}.}
+\uncover<5->{Wówczas ideał $\I=S^0(\mathcal{F})$ jest {\color{red}tall}.}
 \end{block}
 }
 \uncover<5->{
@@ -454,6 +465,46 @@ Ideały $\I_F$, $\I_G$ oraz $\I_K$ są wszystkie {\color{red}tall}.
 \end{block}
 }
 \end{frame}
+%---------------------------------------------
+\begin{frame}\frametitle{Wyznaczenie klasy borelowskiej ideału}
+\uncover<1->{
+\begin{block}{Ważkie pytanie:}
+Każdy ideał $\I$ na $\N$ może być
+traktowany jako pewien specyficzny podzbiór 
+zbioru Cantora $2^{\omega}$, mianowicie
+$\I \subseteq P(\N) \simeq 2^\omega$.
+W ten sposób możemy pytać o klasę borelowską ideału.
+\end{block}
+}
+\uncover<2->{
+\begin{block}{Twierdzenie}
+Niech $\mathcal{F}\subseteq P(\N)$ będzie przeliczaną rodziną złożoną
+ze zbiorów nieskończonych. Załóżmy ponadto że:
+\begin{itemize}
+\item<3-> $\mathcal{F}$ ma własność \emph{base-like},
+czyli 
+$\forall_{F_1, F_2\in\mathcal{F},\ F_1\cap F_2\neq\emptyset}\ \exists_{H\in\mathcal{F}}
+\ H\subseteq F_1\cap F_2$
+\item<4-> $\mathcal{F}$ ma własność \emph{splittingu}, 
+czyli
+$\forall_{F\in\mathcal{F}}\ \exists_{F_1,F_2\in\mathcal{F},\ F_1\cup F_2
+ \subseteq F}\ F_1\cap F_2 = \emptyset$
+\end{itemize}
+\uncover<5->{Wówczas ideał $\I=S^0(\mathcal{F})$ {\color{red}nie} jest typu $F_{\sigma}$.}
+\end{block}
+}
+\uncover<6->{
+...łącząc to z faktem iż każdy ideał $\MBC$ jest
+typu $F_{\sigma\delta}$ dostajemy:
+\begin{block}{Twierdzenie}
+$\I_F$, $\I_G$ oraz $\I_K$ są ideałami typu $F_{\sigma\delta}$ lecz już nie $F_{\sigma}$.
+\end{block}}
+\end{frame}
+%---------------------------------------------
+%---------------------------------------------
+%---------------------------------------------
+%---------------------------------------------
+%---------------------------------------------
 %---------------------------------------------
 %---------------------------------------------
 %---------------------------------------------
