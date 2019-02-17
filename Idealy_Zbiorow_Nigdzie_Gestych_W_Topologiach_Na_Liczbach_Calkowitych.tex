@@ -230,7 +230,32 @@ et cetera, jakie mają one własności...
 }
 \end{frame}
 %---------------------------------------------
-\begin{frame}\frametitle{Wynik ,,pozytywny''}
+\begin{frame}[label=lemCRT,shrink=1]\frametitle{Pomocniczy lemat}
+\uncover<1->{
+ \begin{block}{Lemat}
+Niech $a,b,a_1,b_1,a_2,b_2 \in\N$. 
+Jeśli $\arithseq{a_1}{b_1}\subseteq \arithseq{a}{b}$, $\arithseq{a_2}{b_2}\subseteq \arithseq{a}{b}$, 
+i $\left(\frac{a_1}{a},\frac{a_2}{a}\right)=1$, to
+$\arithseq{a_1}{b_1}\cap\arithseq{a_2}{b_2}\not=\emptyset$ (zatem jest ciągiem arytmetycznym). 
+\end{block} }
+
+\uncover<2->{
+\begin{block}{Dowód}
+\begin{itemize}
+\item<3->Niech $f(n) = an+b$.  
+\item<4-> Wówczas $f^{-1}[\arithseq{a_1}{b_1}] = \arithseq{\frac{a_1}{a}}{\frac{b_1-b}{a}}$,
+$f^{-1}[\arithseq{a_2}{b_2}] = \arithseq{\frac{a_2}{a}}{\frac{b_2-b}{a}}$
+a skoro $\left(\frac{a_1}{a},\frac{a_2}{a}\right)=1$
+to stosując Chińskie twierdzenie o resztach, dostajemy że ich przekrój jest niepusty.
+\item<5-> Więc
+$f^{-1}[\arithseq{a_1}{b_1}\cap\arithseq{a_2}{b_2}] = f^{-1}[\arithseq{a_1}{b_1}]\cap f^{-1}[\arithseq{a_2}{b_2}]\neq\emptyset,$
+\item<6-> Czyli 
+$\arithseq{a_1}{b_1}\cap\arithseq{a_2}{b_2} = f[f^{-1}[\arithseq{a_1}{b_1}\cap\arithseq{a_2}{b_2}]] \neq\emptyset.$
+\end{itemize}
+\end{block}}
+\end{frame}
+%---------------------------------------------
+\begin{frame}[shrink=5]\frametitle{Wynik ,,pozytywny''}
 \uncover<1->{
 \begin{block}{Twierdzenie}
 $\I_K \subseteq \I_G$.
@@ -249,21 +274,30 @@ $X\cap \arithseq{c}{d} \neq \emptyset$.}
 \uncover<5->{
 Gdy zdefiniujemy $a' := \prod_{p\in\Theta(a)}{p}$ 
 (taką \`{a} la ,,bezkwadratową część'' liczby $a$)
-i $b' := b \mod a'$. 
-Wówczas, $\arithseq{a'}{b'} \in \B_K$.}
-%%% bo $a' \in \SqrFr$, $(a',b') = 1$ (as $(a,b) = 1$), and $b'<a'$.
+i $b' := b \mod a'$ 
+to wówczas, $\arithseq{a'}{b'} \in \B_K$
+(bo $a' \in \SqrFr$, $(a',b') = 1$ gdyż $(a,b) = 1$ i $b'<a'$).}
 \uncover<6->{Niech teraz $\arithseq{c'}{d'} \subseteq \arithseq{a'}{b'}$ będzie takie że $\arithseq{c'}{d'}\in \B_K$ 
-(wówczas $c' \in \SqrFr$, $(c',d')=1$, $d'<c'$, and $a'\mid c'$).}
-%Note that $\arithseq{a}{b}\subseteq \arithseq{a'}{b'}$, $\arithseq{c'}{d'}\subseteq \arithseq{a'}{b'}$, 
-%and observe that $\left(\frac{a}{a'}, \frac{c'}{a'}\right) = 1$ -- the only prime factors of $\frac{a}{a'}$ 
-%are those that have already appeared in the factorization of $a'$, whereas all prime factors of $\frac{c'}{a'}$ 
-%must be different from the prime factors of $a'$ since $c'$ is square-free. 
-\uncover<7->{Kładziemy $A:= \arithseq{a}{b}\cap\arithseq{c'}{d'} \neq \emptyset$ i 
-to będzie nasze szukane otoczenie.
+(wówczas $c' \in \SqrFr$, $(c',d')=1$, $d'<c'$ i $a'\mid c'$).}
+\uncover<7->{
+Mamy $\arithseq{a}{b}\subseteq \arithseq{a'}{b'}$, $\arithseq{c'}{d'}\subseteq \arithseq{a'}{b'}$, 
+i zauważmy że $\left(\frac{a}{a'}, \frac{c'}{a'}\right) = 1$ -- bo jedynym dzielnikiem pierwszym $\frac{a}{a'}$ 
+są tylko te jakie się już pojawiły w rozkładzie  $a'$, 
+podczas gdy wszystkie pierwsze dzielniki  $\frac{c'}{a'}$ 
+muszą być różne od dzielników pierwszych $a'$ bo $c'\in\SqrFr$.
+}
+\uncover<8->{Zatem gdy zdefiniujemy $A:= \arithseq{a}{b}\cap\arithseq{c'}{d'} \neq \emptyset$ 
+to $A \not=\emptyset$ (\hyperlink{lemCRT}{\beamergotobutton{lemat}}) i 
+to będzie nasze szukane otoczenie,
+bo  $A \in \T_G$ 
+(jako przekrój dwóch zbiorów z $\T_G$) no i 
+$A \subseteq \arithseq{a}{b}$. 
+Z założenia wiemy że $X\cap A \neq \emptyset$. 
+Mamy też $A \subseteq \arithseq{c'}{d'}$ a więc $X\cap \arithseq{c'}{d'} \neq \emptyset$.
 }
 \end{frame}
 %---------------------------------------------
-\begin{frame}[label=GFnotK]
+\begin{frame}[label=GFnotK,shrink=5]
 \uncover<1->{
 \begin{block}{Twierdzenie}
 $(\I_G\cap \I_F) \backslash \I_K \not= \emptyset$.
@@ -282,7 +316,11 @@ Dla każdego $k\in\N$ wybieramy $x_k$ tak aby:
 Ta konstrukcja jest możliwa gdyż $C_k \cap \arithseq{2^k}{1}$ 
 jest zawsze niepusty 
 
-(if $C_k = \arithseq{a_k}{b_k}$, then $a_k$ is even and square-free, and $\left(\frac{a_k}{2},\frac{2^k}{2}\right)=\left(\frac{a_k}{2},2^{k-1}\right)=1$ as $\frac{a_k}{2}$ is odd; both $\arithseq{a_k}{b_k}$ and $\arithseq{2^k}{1}$ are subsequences of $\arithseq{2}{1}$, so, by Lemma \ref{lemCRT}, their intersection is nonempty). 
+(gdy $C_k = \arithseq{a_k}{b_k}$ to $a_k$ jest parzysty i $\in\SqrFr$ i 
+$\left(\frac{a_k}{2},\frac{2^k}{2}\right)=\left(\frac{a_k}{2},2^{k-1}\right)=1$ 
+gdyż $\frac{a_k}{2}$ jest nieparzysty; oba $\arithseq{a_k}{b_k}$ i $\arithseq{2^k}{1}$ 
+są podciągami $\arithseq{2}{1}$ zatem \hyperlink{lemCRT}{\beamergotobutton{lemat}}
+zapewnia niepustość ich przekroju). 
 
 Niech $X := \{x_k :\ k\in\N\}$.
 
@@ -296,26 +334,26 @@ $V\in \T_F$ i gdy $\arithseq{a}{b}\in \B_G$ to $V\in\T_G$.
 
   Na początek załóżmy że $2\not | a$. Niech 
 $V = (\arithseq{a}{b} \cap \arithseq{4}{3}) \setminus \{x_1\}$. 
-Then $V \not= \emptyset$ because $(a,4) = 1$ so 
-$V\in \T_F$ and, if $\arithseq{a}{b}\in \B_G$, then $V\in \T_G$.
-If $k > 1$, then $x_k \in \arithseq{4}{1}$ so $V\cap X = \emptyset$.
+Wówczas $V \not= \emptyset$ bowiem $(a,4) = 1$ zatem
+$V\in \T_F$ i gdy $\arithseq{a}{b}\in \B_G$ to $V\in \T_G$.
+Gdy $k > 1$ to $x_k \in \arithseq{4}{1}$ więc $V\cap X = \emptyset$.
   
   Załóżmy teraz że $2|a$ i wybierzmy największe $m\in \N$
 takie, że $2^m|a$. Gdy $b$ jest parzyste, to $\arithseq{a}{b}\cap X = \emptyset$
 i kładziemy $V = \arithseq{a}{b}$. Załóżmy zatem że 
-$b$ jest nieparzyste. If $b\not\equiv 1(\modulo 2^m)$, let
+$b$ jest nieparzyste. Gdy $b\not\equiv 1(\modulo 2^m)$, definiujemy
 $V = \arithseq{a}{b}\setminus \{x_1,\ldots, x_{m-1}\}$.
-Then $\arithseq{a}{b}\cap \arithseq{2^m}{1} = \emptyset$ so $V\cap X = \emptyset$.
+Wówczas $\arithseq{a}{b}\cap \arithseq{2^m}{1} = \emptyset$ so $V\cap X = \emptyset$.
 
-  Thus we may assume that $b\equiv 1(\modulo 2^m)$. Let 
+  Zatem możemy zakładać że $b\equiv 1(\modulo 2^m)$. Niech
 \[
 V = (\arithseq{a}{b} \cap \arithseq{2^{m+1}}{1 + 2^m}) \setminus \{x_1,\ldots, x_{m}\}.
 \]
-Then $V \not= \emptyset$ because $(\frac{a}{2^m} , \frac{2^{m+1}}{2^m}) = 1$
-and $\arithseq{a}{b}$ and $\arithseq{2^{m+1}}{1 + 2^m}$
-are contained in $\arithseq{2^m}{1}$. 
-If $k > m$, then $x_k \in \arithseq{2^{m+1}}{1}$ so 
-$V\cap X = \emptyset$. Also $V\in\T_F$ and, if $\arithseq{a}{b} \in \B_G$, then
+Wówczas $V \not= \emptyset$ gdyż $(\frac{a}{2^m} , \frac{2^{m+1}}{2^m}) = 1$
+i $\arithseq{a}{b}$ i $\arithseq{2^{m+1}}{1 + 2^m}$
+są zawarte w $\arithseq{2^m}{1}$. 
+Gdy $k > m$ to $x_k \in \arithseq{2^{m+1}}{1}$ więc
+$V\cap X = \emptyset$. Także $V\in\T_F$ i, gdy $\arithseq{a}{b} \in \B_G$ to
 $V \in \T_G$.
 }
 \hyperlink{diagramik}{\beamerreturnbutton{Do diagramu}}
@@ -337,7 +375,7 @@ w postaci następującego diagramu:}
 \putrectangle{90}{8}{97}{76}
 \put(192,88){\makebox(0,0){$\I_F$}}
 
-\put(25,56){\makebox(0,0){?}}
+\put(25,56){\makebox(0,0){{\color{magenta}?}}}
 \put(62,56){\makebox(0,0){$\arithseq{2}{2}$}}
 \put(110,56){\makebox(0,0){$\{n!\}$}}
 \put(152,56){\makebox(0,0){\hyperlink{GFnotK}{\beamerreturnbutton{Ex}}}}
