@@ -32,6 +32,7 @@
 \newcommand{\INULL}{\I_\mathrm{NULL}}			  
 \newcommand{\cl}{\mathrm{cl}}
 \newcommand{\interior}{\mathrm{int}}
+\newcommand{\dummy}{{\bf dummy, dummy, dummy}}
 \documentclass{beamer} 
 %\documentclass[a4paper, 11pt, xcolor=dvipsnames]{beamer} 
 \usepackage[polish]{babel}
@@ -482,7 +483,7 @@ Ideały $\I_F$, $\I_G$ i $\I_K$ są $\MBC$.
 
 \end{frame}
 %---------------------------------------------
-\begin{frame}\frametitle{Nasze ideały są {\color{red}tall}}
+\begin{frame}[shrink=5]\frametitle{Nasze ideały są {\color{red}tall}}
 \uncover<1->{
 \begin{block}{Definicja}
 Mówimy że ideał $\mathcal{I}\subseteq\mathcal{P}(\N)$ jest 
@@ -506,7 +507,25 @@ $\forall_{F\in\mathcal{F}}\ \exists_{F_1,F_2\in\mathcal{F},\ F_1\cup F_2
 \uncover<5->{Wówczas ideał $\I=S^0(\mathcal{F})$ jest {\color{red}tall}.}
 \end{block}
 }
-\uncover<5->{
+\end{frame}
+%------------------------------------------------------------------------------
+\begin{frame}[shrink=5]\frametitle{Nasze ideały są {\color{red}tall} - c.d.}
+\uncover<1->{
+\begin{block}{Obserwacja}
+\begin{itemize}
+\item<2->
+Standardowe bazy topologii Furstenberga, Golomba oraz Kircha
+mają własność \emph{splittingu}. 
+\item<3->Wynika to z twierdzenia:
+  {\bf Twierdzenie} 
+Każda baza topologii Hausdorffa bez
+punktów izolowanych ma własność \emph{splittingu}.
+\item<4->Dowód?...
+\item<5->...W zasadzie jest rutynowy.
+\end{itemize}
+\end{block}
+}
+\uncover<6->{
 \begin{block}{Wniosek}
 Ideały $\I_F$, $\I_G$ oraz $\I_K$ są wszystkie {\color{red}tall}.
 \end{block}
@@ -546,6 +565,35 @@ typu $F_{\sigma\delta}$ dostajemy:
 \begin{block}{Twierdzenie}
 $\I_F$, $\I_G$ oraz $\I_K$ są ideałami typu $F_{\sigma\delta}$ lecz już nie $F_{\sigma}$.
 \end{block}}
+\end{frame}
+%---------------------------------------------
+\begin{frame}[shrink=1,label=powrotMaz]\frametitle{Szkic dowodu poprzedniego twierdzenia}
+\uncover<1->{
+\begin{block}{Dowód}
+Przypuśćmy że $\I=S^0(\mathcal{F})$ jest ideałem typu $F_\sigma$.
+Charakteryzacja K.Mazura \hyperlink{bibliografia}{\beamergotobutton{publikacja}} 
+powiada iż istnieje dolnie półciągła podmiara
+$\phi\colon\mathcal{P}(\N)\to [0, \infty]$
+, to znaczy taka funkcja iż
+dla dowolnych $A,B\subseteq\N$:}
+\begin{enumerate}
+\item<2-> $\phi(\emptyset)=0$ oraz $\phi(\N)>0$,
+\item<3-> $\phi(\{n\})<\infty$ dla każdego $n\in\N$,
+\item<4-> $A\subseteq B \implies\phi(A)\leq \phi(B)$,
+\item<5-> $\phi(A\cup B) \leq \phi(A) + \phi(B)$,
+\item<6-> $\phi(A)=\lim_{n\to\infty} \phi(A \cap \{1,\ldots,n\})$ (\emph{dolna półciągłość}),
+\end{enumerate}
+\uncover<7->{
+taka że $\I= \Fin(\phi)=\{A\subseteq \N :\ \phi(A)<\infty\}$.
+}
+\uncover<8->{
+Ze splittingu ustalamy rodzinę $\{F_i\}_{i\in\N}$ parami rozlącznych elementów $\mathcal{F}$.
+Mamy $\forall_{i}\ F_i\notin\I$, więc $\phi(F_i)=\infty$. Dla każdego $i\in\N$ wybieramy
+(na mocy dolnej półciągłości $\phi$) skończony $A_i\subseteq F_i$ taki że $\phi(A_i)>i$. 
+Definiujemy $A:=\bigcup_{i\in\N}{A_i}$. 
+Można wykazać (pomijamy nietrudny dowód)
+że $A\in S^0(\mathcal{F}) = \I$. Z drugiej strony $\forall_{i}\ A_i \subseteq A$ więc $i<\phi(A_i)\leq \phi(A)$. Zatem $\phi(A)=\infty$ więc $A\notin\I$, sprzeczność.}
+\end{block}
 \end{frame}
 %---------------------------------------------
 \begin{frame}\frametitle{Topologiczna własność ideału Furstenberga}
@@ -588,6 +636,11 @@ Proc. Amer. Math. Soc. {\bf 131}(6) (2003) 1971--1975.
 \bibitem{MZ}
  {\sc Kwela, Marta, AN;} {Ideals of nowhere dense sets in some topologies on positive integers.} Topology Appl. 248 (2018), 149–163.
 }
+
+\bibitem{Maz}
+{\sc Mazur K.}, {$F_\sigma$-ideals and $\omega_1\omega_1^*$-gaps in the Boolean algebras $\mathcal{P}(\omega)/\mathcal{I}$}, Fund. Math. {\bf 138}(2) (1991) 103--111.
+\hyperlink{powrotMaz}{\beamerreturnbutton{Powrót}}
+
 \bibitem{PS}
 {\sc Szczuka P.}, {The connectedness of arithmetic progressions in Furstenberg's, Golomb's and Kirch's topologies},
 Demonstratio Math. {\bf 43}(4) (2010) 899--909.
