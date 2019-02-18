@@ -146,7 +146,7 @@ Mamy: $\I_{\frac{1}{n}} \subseteq \I_d$.
 }
 
 \uncover<8->{
-??? (jaka topologia?) $\Rightarrow$ $\cI$ ideał zbiorów nigdziegęstych w tej top.
+{\color{magenta}???} (jaka topologia?) $\Rightarrow$ $\cI$ ideał zbiorów nigdziegęstych w tej top.
 }
 \end{frame}
 %----------------------------------
@@ -398,6 +398,28 @@ w postaci następującego diagramu:}
 \end{frame}
 %---------------------------------------------
 %---------------------------------------------
+\begin{frame}\frametitle{Rola sekwencji $\arithseq{2}{2}$}
+
+Pokażemy że dla dowolnego $\arithseq{a}{b} \in \B_K$ 
+istnieje $\arithseq{c}{d} \in \B_K$ taki że $\arithseq{c}{d} \subseteq \arithseq{a}{b}$
+oraz $\arithseq{c}{d} \cap \arithseq{2}{2} = \emptyset$. 
+Mamy $(a,b)=1$, $b<a$ oraz $a \in \SqrFr$, rozważamy dwa przypadki:
+\begin{enumerate}
+ \item<2-> $2\mid b$. Wtedy $2 \nmid a$ (bo $(a:b)=1$). 
+Niech $\arithseq{c}{d} := \arithseq{2a}{a+b}$. Skoro $(a,b)=1$ to $(a,a+b)=1$ i skoro
+ $2 \nmid a$, mamy $(2a,a+b)=1$. 
+Co więcej $2a\in\SqrFr$. Zatem $\arithseq{2a}{a+b}\in\B_K$, $\arithseq{2a}{a+b}\subseteq\arithseq{a}{b}$. Ponadto $\arithseq{2a}{a+b}\cap \arithseq{2}{2} = \emptyset$.
+
+ \item<3-> $2\nmid b$. 
+Gdy $2\mid a$ kładziemy $\arithseq{c}{d} := \arithseq{a}{b}$.
+Gdy zaś $2\nmid a$ wtedy
+kładziemy $\arithseq{c}{d} := \arithseq{2a}{b}$. Znów $2a\in\SqrFr$. Skoro $2\nmid b$ to $(2a,b)=1$. 
+Więc, $\arithseq{2a}{b}\in\B_G$ i $\arithseq{2a}{b}\subseteq\arithseq{a}{b}$. 
+Co więcej, $\arithseq{2a}{b}\cap \arithseq{2}{2} = \emptyset$.
+\end{enumerate}
+\end{frame}
+%---------------------------------------------
+%---------------------------------------------
 \begin{frame}[label=powrotIF]\frametitle{Dalsze ścieżki}
 \uncover<1->{
 Jakie własności mają nasze ideały i jak są umocowane 
@@ -612,8 +634,65 @@ przestrzeń metryzowalną bez punktów izolowanych.
 \end{block}
 }
 \end{frame}
-
 %---------------------------------------------
+\begin{frame}[label=powrotFMRS,label=powrotBFMS]\frametitle{Własność Bolzano-Weierstrassa}
+\uncover<1->{
+W artykule \hyperlink{bibliografia}{\beamergotobutton{publikacja}}, 
+R. Filipów, N. Mrożek, I. Recław, oraz P. Szuca 
+wprowadzili tak zwaną {\color{magenta} własność Bolzano-Weierstrassa} ideałów. 
+}
+\uncover<2->{
+\begin{block}{Definicja}
+Mówimy że ideał $\I$ na $\N$ 
+ma {\color{magenta} własność $\finbw$} gdy dla dowolnego ograniczonego ciągu
+$(x_n)_{n\in\N}$ liczb rzeczywistych istnieje $A\notin\I$ 
+taki że podciąg $(x_n)_{n\in A}$ jest zbieżny.
+\end{block}
+}
+\uncover<3->{
+Istnieje wiele równoważnych i zdecydowanie bardziej wygodniejszych do 
+zastosowań charakteryzacji własności $\finbw$, np. w pracy
+\hyperlink{bibliografia}{\beamergotobutton{Barbarski P., Filipów R., Mrożek N., Szuca P.}}
+jest charakteryzacja używająca pojęcia tzw. {\color{purple}drzewa zbiorów doskonałych}.
+}
+\end{frame}
+
+\begin{frame}\frametitle{Pożyteczna charakteryzacja}
+
+\uncover<1->{
+\begin{block}{Twierdzenie [Marta Kwela \& AN]}
+Ideał $\I$ {\color{red} nie ma} własności $\finbw$ wtedy i tylko wtedy gdy
+istnieje ciąg skończonych podziałów $(\mathcal{P}_n)_{n\in\N}$ zbioru $\N$ takich, że
+$\bigcap_{n\in\N}{H^{*}(\mathcal{P}_n)}\subseteq\I.$
+\end{block}}
+
+\uncover<1->{
+(gdzie: 
+$H^{*}(\mathcal{P}) = \{A\subseteq\N :\ \exists_{B\in\mathcal{P}}\ A\subseteq^{*} B\},$ 
+gdzie $A\subseteq^{*} B$ jest tak zwanym {\color{purple} prawie zawieraniem}, tzn.
+$A\setminus B$ jest zbiorem skończonym).
+}
+\end{frame}
+
+\begin{frame}\frametitle{W odmętach partycji...}
+\uncover<1->{
+\begin{block}{Twierdzenie}
+Ideały $\I_F$, $\I_G$ oraz $\I_K$ {\color{red} nie mają} własności $\finbw$.
+\end{block}}
+
+\uncover<2->{
+\begin{block}{Dowód}
+Definiujemy odpowiedni ciąg skończonych partycji 
+$(\mathcal{P}_k)_{k\in\N}$ zbioru $\N$ jak następuje:
+$$\mathcal{P}_1 := \{\arithseq{n}{1}\}$$
+$$\mathcal{P}_2 := \{\arithseq{2}{1}, \arithseq{2}{2}\}$$
+$$\mathcal{P}_3 := \{\arithseq{3}{1}, \arithseq{3}{2}, \arithseq{3}{3}\}$$
+$$\vdots$$
+$$\mathcal{P}_k := \{\arithseq{k}{1}, \arithseq{k}{2}, \ldots, \arithseq{k}{k}\}$$
+$$\vdots$$
+\end{block}}
+\end{frame}
+
 %---------------------------------------------
 %---------------------------------------------
 %---------------------------------------------
@@ -627,11 +706,21 @@ przestrzeń metryzowalną bez punktów izolowanych.
 \frametitle{Ten referat jest oparty m.in. na publikacjach:}
 \beamertemplatebookbibitems
 \begin{thebibliography}{10}{
+\bibitem{BFMS}
+{\sc Barbarski P., Filipów R., Mrożek N., Szuca P.},
+{Uniform density $u$ and $\I_u$-convergence on a big set},
+Math. Commun. {\bf 16}(1) (2011) 125--130.
+\hyperlink{powrotBFMS}{\beamerreturnbutton{Powrót}}
+
 \bibitem{FS}
 {\sc Farah I., Solecki S.}, {Two $F_{\sigma\delta}$ ideals},
 Proc. Amer. Math. Soc. {\bf 131}(6) (2003) 1971--1975.
-
 \hyperlink{powrotIF}{\beamerreturnbutton{Powrót}}
+
+\bibitem{FMRS}
+{\sc Filip\'ow R., Mro\.zek N., Rec\l{}aw I., Szuca P.}, {Ideal convergence of bounded sequences},
+J. Symbolic Logic {\bf 72}(2) (2007) 501--512.
+\hyperlink{powrotFMRS}{\beamerreturnbutton{Powrót}}
 
 \bibitem{MZ}
  {\sc Kwela, Marta, AN;} {Ideals of nowhere dense sets in some topologies on positive integers.} Topology Appl. 248 (2018), 149–163.
@@ -644,7 +733,6 @@ Proc. Amer. Math. Soc. {\bf 131}(6) (2003) 1971--1975.
 \bibitem{PS}
 {\sc Szczuka P.}, {The connectedness of arithmetic progressions in Furstenberg's, Golomb's and Kirch's topologies},
 Demonstratio Math. {\bf 43}(4) (2010) 899--909.
-
 \hyperlink{powrotPS}{\beamerreturnbutton{Powrót}}
 
 \end{thebibliography}
